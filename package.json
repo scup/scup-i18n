@@ -1,6 +1,6 @@
 {
   "name": "scup-i18n",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Translation sync tool",
   "main": "index.js",
   "scripts": {
