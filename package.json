@@ -1,0 +1,32 @@
+{
+  "name": "scup-i18n",
+  "version": "0.0.4",
+  "description": "Translation sync tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Guilherme",
+    "url": "Coder"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^0.7.1",
+    "transifexjs": "0.0.6",
+    "ordine": "0.0.9"
+  },
+  "maintainers": [
+    {
+      "name": "guisouza",
+      "email": "gui_souza@me.com"
+    },
+    {
+      "name": "willianjedai",
+      "email": "willianjedai@gmail.com"
+    }
+  ],
+  "readme": "ERROR: No README data found!",
+  "_id": "scup-i18n@0.0.4",
+  "_from": "scup-i18n@"
+}
