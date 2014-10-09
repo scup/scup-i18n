@@ -1,25 +1,14 @@
 #!/usr/bin/env node
 
+var _args = require('simple-args'),
+  transifex = new require('transifexjs'),
+  inquirer = require('inquirer'),
+  Ordine = require('ordine');
+
 module.exports = (function(){
-	'use Strict'
+  'use Strict'
 
-
-
-  var arguments = process.argv;
-  var serializedArguments = {};
-
-  for (var i = 0; i <= arguments.length-1; i++) {
-    if (arguments[i].substr(0,1).indexOf('-') == 0){
-      serializedArguments[arguments[i].replace(/\-\-/,'')] = arguments[i+1]
-    }else{
-    }
-  };
-
-  
-	var transifex = new require("transifexjs");
-	var inquirer = require('inquirer');
-	var Ordine = require('ordine');
-	var questions = [];
+  var questions = [];
 
   questions.push({
     type:'input',
@@ -82,14 +71,14 @@ module.exports = (function(){
 
 
 
-  if (serializedArguments.hasOwnProperty('usr')){
+  if (_args.hasOwnProperty('usr')){
     console.log('defined usr')
-    I18N.username = serializedArguments['usr'];
+    I18N.username = _args['usr'];
   }
 
-  if (serializedArguments.hasOwnProperty('pass')){
+  if (_args.hasOwnProperty('pass')){
     console.log('defined pass')
-    I18N.password = serializedArguments['pass'];
+    I18N.password = _args['pass'];
   }
 
 
@@ -106,7 +95,7 @@ module.exports = (function(){
       x = JSON.parse(x)
       questions[2].choices = [];
       x.forEach(function(option,i){
-          questions[2].choices.push(option.slug)
+        questions[2].choices.push(option.slug)
       })
       inquirer.prompt(questions[2],function(resources){
         transifex.setResource(resources['resources'][0]);
@@ -135,11 +124,11 @@ module.exports = (function(){
       x = JSON.parse(JSON.parse(x)['content']);
 
       require('fs').writeFile("teste.json", JSON.stringify(x), function(err) {
-          if(err) {
-              console.log(err);
-          } else {
-              console.log("The file was saved!");
-          }
+        if(err) {
+          console.log(err);
+        } else {
+          console.log("The file was saved!");
+        }
       }); 
 
       flush.next();
@@ -153,8 +142,8 @@ module.exports = (function(){
 
   }
 
-	return {
-		start : function(){
+  return {
+    start : function(){
       console.log('run');
       flush.run()
     }

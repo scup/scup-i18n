@@ -13,8 +13,9 @@
   "license": "ISC",
   "dependencies": {
     "inquirer": "^0.7.1",
-    "transifexjs": "0.0.6",
-    "ordine": "0.0.9"
+    "ordine": "0.0.9",
+    "simple-args": "^1.0.2",
+    "transifexjs": "0.0.6"
   },
   "maintainers": [
     {
